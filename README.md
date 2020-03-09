@@ -58,7 +58,7 @@ Use POSTman to send a `POST` request to `http://MACHINEIP/api/tickets.json`
 
 ![api response](assets/osticket_3.png)
 
-Now Click `Agent Panel` or go to `http://54.173.135.153/scp/index.php`
+Now Click `Agent Panel` or go to `http://MACHINEIP/scp/index.php`
 
 You will see your ticket:
 
