@@ -2,7 +2,7 @@
 
 ## Create OSTicket MAchine
 
-* Create a `t3.small Ubuntu Server 18.04` EC2 instance.
+* Create a `t3.small Ubuntu Server 18.04` EC2 instance. Allow SSH and HTTP traffic.
 * SSH into the instance and run:
 ```
 cd ~
