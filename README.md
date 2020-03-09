@@ -23,6 +23,8 @@ Database User: osticket
 Database Password: password
 ```
 
+![post installation screen](assets/osticket_1.png)
+
 ## Cleanup Install
 For security, we need to cleanup and reset some files. Do that now:
 ```
@@ -34,6 +36,8 @@ sudo chmod 0644 /var/www/html/include/ost-config.php
 Create an API key for your local machine.
 * Go to http://MACHINEIP/scp/apikeys.php?a=add
 * Give the key permission the `Can Create Tickets` permission.
+
+![create api key](assets/osticket_2.png)
 
 ## Validate The osTicket API
 Use POSTman to send a `POST` request to `http://MACHINEIP/api/tickets.json`
@@ -51,3 +55,11 @@ Use POSTman to send a `POST` request to `http://MACHINEIP/api/tickets.json`
     "message": "This is a test message..."
 }
 ```
+
+![api response](assets/osticket_3.png)
+
+Now Click `Agent Panel` or go to `http://54.173.135.153/scp/index.php`
+
+You will see your ticket:
+
+![api response](assets/osticket_4.png)
