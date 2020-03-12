@@ -33,13 +33,25 @@ sudo chmod 0644 /var/www/html/include/ost-config.php
 ```
 
 ## Create API Keys
-Create an API key for your local machine.
+Create an API key for the Keptn IP address.
 * Go to http://MACHINEIP/scp/apikeys.php?a=add
 * Give the key permission the `Can Create Tickets` permission.
 
 ![create api key](assets/osticket_2.png)
 
-## Validate The osTicket API
+Make a note of this API key.
+
+
+---
+
+# Troubleshooting
+This section is optional and only to be used for troubleshooting.
+
+## Optional : Manually Validate The osTicket API
+If the Keptn integration doesn't work, first try firing a `POST` request into `osticket` manually.
+
+You'll need to generate a new API key and give it **YOUR** IP address.
+
 Use POSTman to send a `POST` request to `http://MACHINEIP/api/tickets.json`
 * Set a header of `X-Api-Key` with the value of your API key.
 * You should receive a `201 Created` response code & the ticket ID as a response.
