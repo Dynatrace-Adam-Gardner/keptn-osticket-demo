@@ -59,7 +59,12 @@ kubectl apply -f osticket-service-deployment.yaml
 kubectl apply -f osticket-distributor.yaml
 ```
 
-This will deploy the `osticket` service which listens for the `evaluation-done` event. When it receives this event, the `osticket-service` will push a notification into `osticket` which creates the ticket.
+Validate that you have two pods running:
+```
+kubectl get pods -n keptn | grep osticket
+```
+
+![create api key](assets/osticket_5.png)
 
 ## Run an Evaluation
 
