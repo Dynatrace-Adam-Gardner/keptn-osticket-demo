@@ -11,7 +11,7 @@ chmod +x osTicketSetup.sh
 ./osTicketSetup.sh
 ````
 
-## Install via Browser
+## Continue via Browser
 Go to http://MACHINEIP/setup and follow the browser instructions.
 
 > Note: You might get a 500 error after install. That's OK. Just refresh the page.
