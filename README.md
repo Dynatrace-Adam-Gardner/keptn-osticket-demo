@@ -41,6 +41,40 @@ Create an API key for the Keptn IP address.
 
 Make a note of this API key.
 
+## Deploy the osTicket Service
+
+**On the Keptn VM,** run the following:
+```
+cd ~
+wget https://raw.githubusercontent.com/Dynatrace-Adam-Gardner/keptn-osticket-demo/master/osticket-service-deployment.yaml
+wget https://raw.githubusercontent.com/Dynatrace-Adam-Gardner/keptn-osticket-demo/master/osticket-distributor.yaml
+```
+
+Edit lines `25` and `27` of the `osticket-service-deployment.yaml` to reflect your details.
+The URL should be the IP address of your **osticket** machine and the API key you generated above.
+
+Save and apply both files:
+```
+kubectl apply -f osticket-service-deployment.yaml
+kubectl apply -f osticket-distributor.yaml
+```
+
+This will deploy the `osticket` service which listens for the `evaluation-done` event. When it receives this event, the `osticket-service` will push a notification into `osticket` which creates the ticket.
+
+## Run an Evaluation
+
+**On the Keptn VM,** ask `keptn` to start an evaluation:
+
+```
+keptn send event start-evaluation --project=website --stage=quality --service=front-end --timeframe=2m
+```
+This command will return a `keptn context` ID. Make a note of this.
+
+Now wait for a ticket in osTicket... You can check whether the evaluation is done in keptn:
+
+```
+keptn get event evaluation-done --keptn-context=*****
+```
 
 ---
 
